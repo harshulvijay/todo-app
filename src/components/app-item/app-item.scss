@@ -1,0 +1,43 @@
+:host {
+  display: block;
+}
+
+div.item {
+  display: inline-flex;
+  width: 100%;
+  background: #3f3f3f;
+  margin: 0.1rem 0;
+  line-height: 2rem;
+  box-sizing: border-box;
+  color: #fff;
+
+  a {color:#fff;text-decoration:none;}
+
+  padding: 0.5rem;
+  border: 0;
+  left: 0;
+  cursor: pointer;
+  transition: all 250ms;
+  outline: none;
+
+  &.active {
+    background: #202020;
+  }
+
+  &:empty::before {
+    content: '<empty>';
+    color: transparent;
+  }
+
+  &:hover {
+    background: #303030;
+  }
+
+  &.active:hover {
+    background: #161616;
+  }
+}
+
+div.spacing {
+  flex: 1 1 auto;
+}
