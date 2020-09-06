@@ -2,6 +2,7 @@ import { Component, Host, h } from '@stencil/core';
 import { createList } from '../../global/utils';
 import { insertList } from '../../global/db.worker';
 import { ListStore } from '../../global/states/lists';
+import { ThemeStore } from '../../global/states/theme';
 
 @Component({
   tag: 'app-home',
@@ -26,6 +27,7 @@ export class AppHome {
   }
 
   render() {
+    ThemeStore.themeID = [1];
     return (
       <Host>
         <input type="text" ref={el => (this.input = el)} />
