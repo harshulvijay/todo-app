@@ -1,17 +1,3 @@
-:host {
-  --app-bg: linear-gradient(to bottom right, #cc2b5e, #753a88);
-  /* url('/assets/bg.png') */
-}
-
-div.ctx {
-  background: red;
-}
-
-* {
-  -webkit-tap-highlight-color: transparent;
-  outline: none;
-}
-
 $scrollbar-track-color: transparentize(
   $color: #000,
   $amount: 0.25,
@@ -29,17 +15,23 @@ $scrollbar-thumb-color-active: transparentize(
   $amount: 0.5,
 );
 
-/* scrollbar stuff */
-
 * {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
   scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color;
   scrollbar-width: auto;
 }
 
+:host {
+  /* --app-bg: linear-gradient(to bottom right, #cc2b5e, #753a88); */
+  --dominant-color: #eee;
+  /* url('/assets/bg.png') */
+}
+
+/* scrollbar stuff */
 ::-webkit-scrollbar {
   width: 0.8rem;
 }
-
 ::-webkit-scrollbar-thumb {
   background: $scrollbar-thumb-color;
   border-radius: 1rem;
@@ -52,7 +44,6 @@ $scrollbar-thumb-color-active: transparentize(
     background: $scrollbar-thumb-color-active;
   }
 }
-
 ::-webkit-scrollbar-track {
   background: $scrollbar-track-color;
   border-radius: 1rem;
@@ -69,45 +60,59 @@ h1 {
   padding: 0;
 }
 
-div.lists {
-  height: 60vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
 div.content {
   display: grid;
   grid-template-columns: auto 1fr;
   height: 100vh;
   max-height: 100vh;
   width: 100vw;
-}
 
-div.hr {
-  box-shadow: 0 0 0 0.125rem #cecece;
-  margin: 0.75rem 0;
-}
+  div.nav {
+    div.hr {
+      box-shadow: 0 0 0 0.125rem #cecece;
+      margin: 0.75rem 0;
+    }
 
-main {
-  box-sizing: border-box;
-  line-height: 1.5rem;
-  overflow-x: hidden;
-  overflow-y: auto;
+    div.lists {
+      height: 60vh;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  }
 
-  div.background {
-    background: var(--app-bg);
-    background-color: #2e2e2e;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    left: 0;
-    margin: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: -1;
-    transition: opacity 150ms;
+  main {
+    box-sizing: border-box;
+    line-height: 1.5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    div.background {
+      background: var(--app-bg);
+      background-color: #2e2e2e;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+      left: 0;
+      margin: 0;
+      opacity: 1;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+      transition: opacity 150ms;
+    }
+
+    div.under {
+      background-color: var(--dominant-color);
+      height: 100%;
+      left: 0;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: -2;
+    }
   }
 }
 
@@ -123,6 +128,6 @@ main {
   }
 
   main {
-    grid-column: 1 / 10;
+    width: 100vw;
   }
 }
