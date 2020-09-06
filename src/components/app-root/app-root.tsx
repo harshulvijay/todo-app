@@ -9,18 +9,23 @@ import { waitFor } from '../../global/utils';
   shadow: true,
 })
 export class AppRoot {
-  bg: HTMLDivElement;
+  /**
+   * The element on which background styles are applied
+   */
+  bgElem: HTMLDivElement;
 
   componentWillLoad() {
     onThemeChange(`themeID`, async id => {
       if (+ThemeStore.currentTheme !== +id) {
-        this.bg.style.opacity = '0';
-        await waitFor(150);
         const { wallpaper } = Themes[+id];
-        this.bg.style.setProperty(`--app-bg`, `url('${wallpaper}')`);
-        ThemeStore.currentTheme = [+id];
+
+        this.bgElem.style.opacity = '0';
         await waitFor(150);
-        this.bg.style.opacity = '1';
+        this.bgElem.style.setProperty(`--app-bg`, `url('${wallpaper}')`);
+        await waitFor(150);
+        this.bgElem.style.opacity = '1';
+
+        ThemeStore.currentTheme = [+id];
       }
     });
   }
@@ -36,7 +41,7 @@ export class AppRoot {
           <app-nav></app-nav>
         </div>
         <main>
-          <div class="background" ref={bg => (this.bg = bg)} />
+          <div class="background" ref={elem => (this.bgElem = elem)} />
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url="/" component="app-home" exact={true} />
