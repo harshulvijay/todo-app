@@ -12,9 +12,9 @@ import { ThemeStore } from '../../global/states/theme';
 })
 export class ListViewer {
   titleEl: HTMLDivElement;
+  @Prop() match: MatchResults;
   @State() list: List;
   @State() redirectToHome: boolean = false;
-  @Prop() match: MatchResults;
 
   private async loadList() {
     const listID = this.match.params.listID;
