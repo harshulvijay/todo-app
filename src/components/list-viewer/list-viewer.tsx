@@ -22,7 +22,6 @@ export class ListViewer {
       const list = await readList(listID);
       if (list) {
         this.list = list;
-        ThemeStore.themeID = [list.meta.theme];
       } else {
         console.error(`Error: List with ID '${listID}' not found`);
         this.redirectToHome = true;
@@ -33,7 +32,6 @@ export class ListViewer {
   async componentWillLoad() {
     await this.loadList();
     ListStore.currentList = this.match.params.listID;
-    /* ThemeStore.themeID = +this.list.meta.index + 0; */
   }
 
   async componentWillUpdate() {
@@ -69,18 +67,21 @@ export class ListViewer {
   }
 
   render() {
-    return (
-      <Host>
-        <div contentEditable class="heading" ref={el => (this.titleEl = el)}>
-          {this.list?.meta.title}
-        </div>
-        <div class="bottom">
-          <input type="text" />
-        </div>
-        {(() => {
-          return this.redirectToHome && <stencil-router-redirect url="/" />;
-        })()}
-      </Host>
-    );
+    ThemeStore.themeID = [this.list.meta.theme];
+    if (!this.redirectToHome) {
+      const { meta } = this.list;
+      return (
+        <Host>
+          <div contentEditable class="heading" ref={el => (this.titleEl = el)}>
+            {meta.title}
+            <br />
+          </div>
+          <div class="bottom">
+            <input type="text" />
+          </div>
+        </Host>
+      );
+    }
+    return this.redirectToHome && <stencil-router-redirect url="/" />;
   }
 }
