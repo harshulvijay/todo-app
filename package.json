@@ -22,7 +22,7 @@
     "@types/jest": "^26.0.10",
     "@types/node": "^14.6.0",
     "@types/puppeteer": "^3.0.1",
-    "date-fns": "^2.15.0",
+    "date-fns": "^2.16.1",
     "idb-keyval": "^3.2.0",
     "nanoid": "^3.1.12",
     "slugify": "^1.4.5",
