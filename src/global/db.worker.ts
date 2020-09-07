@@ -49,9 +49,13 @@ export const insertTask = async (task: Task): Promise<string> => {
   const id: string = task.meta._id;
   const { parent } = task.meta;
   // check whether the parent list exists or not before inserting
-  const list: boolean = await listExists(parent);
-  if (!list) throw new Error(`List '${parent}' doesn't exist`);
+  const parentListExists: boolean = await listExists(parent);
+  if (!parentListExists) throw new Error(`List '${parent}' doesn't exist`);
   await insert<Task>(id, task, `tasks`);
+  // add the task ID to the parent lists' `tasks` property
+  const list: List = await readList(parent);
+  list.tasks.add(id);
+  await insertList(list);
   return id;
 };
 
