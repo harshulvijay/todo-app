@@ -23,8 +23,7 @@ $scrollbar-thumb-color-active: transparentize(
 }
 
 :host {
-  /* --app-bg: linear-gradient(to bottom right, #cc2b5e, #753a88); */
-  --dominant-color: #eee;
+  --app-bg: #e2e2e2 /* linear-gradient(to bottom right, #cc2b5e, #753a88) */;
   /* url('/assets/bg.png') */
 }
 
@@ -100,11 +99,11 @@ div.content {
       top: 0;
       width: 100%;
       z-index: -1;
-      transition: opacity 150ms;
+      transition: opacity 250ms;
     }
 
     div.under {
-      background-color: var(--dominant-color);
+      background-color: #3e3e3e;
       height: 100%;
       left: 0;
       margin: 0;

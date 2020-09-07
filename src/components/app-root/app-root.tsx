@@ -20,9 +20,9 @@ export class AppRoot {
         const { wallpaper } = Themes[+id];
 
         this.bgElem.style.opacity = '0';
-        await waitFor(150);
+        await waitFor(250);
         this.bgElem.style.setProperty(`--app-bg`, `url('${wallpaper}')`);
-        await waitFor(150);
+        await waitFor(250);
         this.bgElem.style.opacity = '1';
 
         ThemeStore.currentTheme = [+id];
