@@ -40,16 +40,16 @@ export class ListViewer {
   }
 
   componentDidLoad() {
-    this.titleEl.onkeypress = e => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        const targetEl = e.target as HTMLDivElement;
+    this.titleEl.onkeypress = evt => {
+      if (evt.key === 'Enter') {
+        evt.preventDefault();
+        const targetEl = evt.target as HTMLDivElement;
         targetEl.blur();
       }
     };
 
-    this.titleEl.onblur = e => {
-      const targetEl = e.target as HTMLDivElement;
+    this.titleEl.onblur = evt => {
+      const targetEl = evt.target as HTMLDivElement;
       this.changeListTitle(targetEl.innerText);
     };
   }
@@ -59,7 +59,6 @@ export class ListViewer {
       meta: { _id: id, title: oldTitle },
     } = this.list;
     if (newTitle !== oldTitle) {
-      console.log('changed');
       ListStore.lists[id].meta.title = newTitle;
       await insertList(ListStore.lists[id]);
       ListStore.lists = { ...ListStore.lists };
