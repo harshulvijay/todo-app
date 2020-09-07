@@ -60,6 +60,11 @@ export const readTask = async (id: string): Promise<Task> => {
   return task;
 };
 
+export const getTaskIDs = async (): Promise<IDBArrayKey> => {
+  const ids: Promise<IDBArrayKey> = keys(`tasks`);
+  return ids;
+};
+
 export const removeTask = async (id: string): Promise<string> => {
   await remove(id, `tasks`);
   return id;
