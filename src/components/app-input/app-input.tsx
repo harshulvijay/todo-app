@@ -2,7 +2,7 @@ import { Component, Host, h } from '@stencil/core';
 
 @Component({
   tag: 'app-input',
-  styleUrl: 'app-input.css',
+  styleUrl: 'app-input.scss',
   shadow: true,
 })
 export class AppInput {
