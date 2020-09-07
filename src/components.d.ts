@@ -9,6 +9,8 @@ import { MatchResults } from "@stencil/router";
 export namespace Components {
     interface AppHome {
     }
+    interface AppInput {
+    }
     interface AppItem {
     }
     interface AppLists {
@@ -29,6 +31,12 @@ declare global {
     var HTMLAppHomeElement: {
         prototype: HTMLAppHomeElement;
         new (): HTMLAppHomeElement;
+    };
+    interface HTMLAppInputElement extends Components.AppInput, HTMLStencilElement {
+    }
+    var HTMLAppInputElement: {
+        prototype: HTMLAppInputElement;
+        new (): HTMLAppInputElement;
     };
     interface HTMLAppItemElement extends Components.AppItem, HTMLStencilElement {
     }
@@ -68,6 +76,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "app-home": HTMLAppHomeElement;
+        "app-input": HTMLAppInputElement;
         "app-item": HTMLAppItemElement;
         "app-lists": HTMLAppListsElement;
         "app-nav": HTMLAppNavElement;
@@ -78,6 +87,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AppHome {
+    }
+    interface AppInput {
     }
     interface AppItem {
     }
@@ -94,6 +105,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "app-home": AppHome;
+        "app-input": AppInput;
         "app-item": AppItem;
         "app-lists": AppLists;
         "app-nav": AppNav;
@@ -107,6 +119,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
+            "app-input": LocalJSX.AppInput & JSXBase.HTMLAttributes<HTMLAppInputElement>;
             "app-item": LocalJSX.AppItem & JSXBase.HTMLAttributes<HTMLAppItemElement>;
             "app-lists": LocalJSX.AppLists & JSXBase.HTMLAttributes<HTMLAppListsElement>;
             "app-nav": LocalJSX.AppNav & JSXBase.HTMLAttributes<HTMLAppNavElement>;
