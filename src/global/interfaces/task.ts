@@ -6,6 +6,8 @@ export interface _TaskMeta {
    */
   date: Date;
 
+  dueDate: Date;
+
   /**
    * The ID of the parent `List` of the `Task`
    */
@@ -20,6 +22,8 @@ export interface TaskDetails {
   note: string;
 
   title: string;
+
+  dueDate: Date;
 }
 
 export interface Task {

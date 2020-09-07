@@ -56,10 +56,11 @@ export const createTask = async (
   parent: string,
 ): Promise<Task> => {
   const date = new Date();
-  const { completed, note, title } = details;
+  const { completed, note, title, dueDate } = details;
   const _meta = {
     _id: await nanoid(),
     date,
+    dueDate,
   };
   // Freeze the `_meta` object
   Object.freeze(_meta);
