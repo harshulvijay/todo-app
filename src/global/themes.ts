@@ -29,7 +29,7 @@ const b = createTheme(
     primary: 'red',
     secondary: 'blue',
   },
-  'assets/bg1.png',
+  'assets/bg1.jpg',
 );
 
 const c = createTheme(
