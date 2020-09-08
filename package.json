@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@stencil/core": "^2.0.2",
+    "@stencil/less": "^1.0.0",
     "@stencil/router": "^1.0.1",
     "@stencil/sass": "^1.3.2",
     "workbox-build": "^4.3.1"
