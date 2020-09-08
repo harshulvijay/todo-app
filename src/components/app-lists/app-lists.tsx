@@ -5,7 +5,7 @@ import { removeList } from '../../global/db.worker';
 
 @Component({
   tag: 'app-lists',
-  styleUrl: 'app-lists.scss',
+  styleUrl: 'app-lists.less',
 })
 export class AppLists {
   @State() listsEl = [];

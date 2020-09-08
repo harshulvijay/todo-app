@@ -1,10 +1,10 @@
 import { Config } from '@stencil/core';
-import { sass } from '@stencil/sass';
+import { less } from '@stencil/less';
 
 // https://stenciljs.com/docs/config
 
 export const config: Config = {
-  globalStyle: 'src/global/app.scss',
+  globalStyle: 'src/global/app.less',
   globalScript: 'src/global/app.ts',
   taskQueue: 'async',
   outputTargets: [
@@ -15,5 +15,5 @@ export const config: Config = {
       baseUrl: 'https://myapp.local/',
     },
   ],
-  plugins: [sass()],
+  plugins: [less()],
 };

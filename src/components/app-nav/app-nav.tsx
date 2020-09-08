@@ -2,7 +2,7 @@ import { Component, Host, h } from '@stencil/core';
 
 @Component({
   tag: 'app-nav',
-  styleUrl: 'app-nav.scss',
+  styleUrl: 'app-nav.less',
 })
 export class AppNav {
   render() {

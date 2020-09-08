@@ -6,7 +6,7 @@ import { ThemeStore } from '../../global/states/theme';
 
 @Component({
   tag: 'app-home',
-  styleUrl: 'app-home.scss',
+  styleUrl: 'app-home.less',
   scoped: true,
 })
 export class AppHome {

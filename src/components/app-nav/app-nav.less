@@ -4,8 +4,8 @@
 
 nav {
   backdrop-filter: blur(1.5rem);
-  background: transparentize($color: #2e2e2e, $amount: 0.1);
-  box-shadow: 0.05rem 0.05rem 0.5rem rgba($color: #2e2e2e, $alpha: 1.0);
+  background: fade(#2e2e2e, 90%);
+  box-shadow: 0.05rem 0.05rem 0.5rem fade(#2e2e2e, 100%);
   box-sizing: border-box;
   color: #fff;
   line-height: 1.75rem;
@@ -18,7 +18,7 @@ nav {
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  
+
   div.text {
     padding: 0.5rem;
   }

@@ -5,7 +5,7 @@ import { waitFor } from '../../global/utils';
 
 @Component({
   tag: 'app-root',
-  styleUrl: 'app-root.scss',
+  styleUrl: 'app-root.less',
   shadow: true,
 })
 export class AppRoot {

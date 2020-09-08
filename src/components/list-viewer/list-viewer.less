@@ -5,7 +5,7 @@
 
 div.heading {
   backdrop-filter: blur(10px);
-  background: transparentize(#2e2e2e, 0.25);
+  background: fade(#2e2e2e, 75%);
   border-radius: 1rem;
   color: #fff;
   font-size: 2rem;
@@ -18,8 +18,7 @@ div.heading {
   min-width: 5rem;
 
   &:focus {
-    box-shadow: inset 0 0 0 0.25rem
-      transparentize($color: #4c89ef, $amount: 0.25);
+    box-shadow: inset 0 0 0 0.25rem fade(#4c89ef, 75%);
   }
 }
 

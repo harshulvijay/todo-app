@@ -2,7 +2,7 @@ import { Component, Host, h } from '@stencil/core';
 
 @Component({
   tag: 'app-item',
-  styleUrl: 'app-item.scss',
+  styleUrl: 'app-item.less',
 })
 export class AppItem {
   x: HTMLDivElement;

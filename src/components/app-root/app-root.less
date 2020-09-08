@@ -1,24 +1,12 @@
-$scrollbar-track-color: transparentize(
-  $color: #000,
-  $amount: 0.25,
-);
-$scrollbar-thumb-color: transparentize(
-  $color: #fff,
-  $amount: 0.1,
-);
-$scrollbar-thumb-color-hover: transparentize(
-  $color: #fff,
-  $amount: 0.25,
-);
-$scrollbar-thumb-color-active: transparentize(
-  $color: #fff,
-  $amount: 0.5,
-);
+@scrollbar-track-color: fade(#000, 75%);
+@scrollbar-thumb-color: fade(#fff, 90%);
+@scrollbar-thumb-color-hover: fade(#fff, 75%);
+@scrollbar-thumb-color-active: fade(#fff, 50%);
 
 * {
   -webkit-tap-highlight-color: transparent;
   outline: none;
-  scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color;
+  scrollbar-color: @scrollbar-thumb-color @scrollbar-track-color;
   scrollbar-width: auto;
 }
 
@@ -32,19 +20,19 @@ $scrollbar-thumb-color-active: transparentize(
   width: 0.8rem;
 }
 ::-webkit-scrollbar-thumb {
-  background: $scrollbar-thumb-color;
+  background: @scrollbar-thumb-color;
   border-radius: 1rem;
 
   &:hover {
-    background: $scrollbar-thumb-color-hover;
+    background: @scrollbar-thumb-color-hover;
   }
 
   &:active {
-    background: $scrollbar-thumb-color-active;
+    background: @scrollbar-thumb-color-active;
   }
 }
 ::-webkit-scrollbar-track {
-  background: $scrollbar-track-color;
+  background: @scrollbar-track-color;
   border-radius: 1rem;
 }
 

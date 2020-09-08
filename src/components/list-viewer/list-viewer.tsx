@@ -7,8 +7,8 @@ import { ThemeStore } from '../../global/states/theme';
 
 @Component({
   tag: 'list-viewer',
-  styleUrl: 'list-viewer.scss',
-  shadow: true,
+  styleUrl: 'list-viewer.less',
+  scoped: true,
 })
 export class ListViewer {
   titleEl: HTMLDivElement;
