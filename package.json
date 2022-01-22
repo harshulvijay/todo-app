@@ -26,7 +26,7 @@
     "@types/puppeteer": "^3.0.1",
     "date-fns": "^2.16.1",
     "idb-keyval": "^3.2.0",
-    "nanoid": "^3.1.12",
+    "nanoid": "^3.1.31",
     "slugify": "^1.4.5",
     "sortablejs": "^1.10.2",
     "tippy.js": "^6.2.6"
